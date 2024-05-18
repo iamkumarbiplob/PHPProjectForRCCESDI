@@ -11,30 +11,33 @@
 </head>
 
 <body>
-    <section id="navBar" class="container mx-auto py-3 px-2 bg-slate-300">
-        <div class="flex flex-wrap flex-row items-center justify-between relative">
-            <div class="text-2xl font-bold">Logo</div>
-            <div class=" flex lg:hidden items-center justify-center" onclick="showMenu()">
-                <span class="" id="navMenuButtonOn">
-                    <span class="material-symbols-outlined">
-                        menu
-                    </span>
-                </span>
-                <span class="hidden" id="navMenuButtonOff">
-                    <span class="material-symbols-outlined">
-                        close
-                    </span>
-                </span>
 
+    <div class="bg-slate-300">
+        <section id="navBar" class="container mx-auto py-3 px-2">
+            <div class="flex flex-wrap flex-row items-center justify-between relative">
+                <div class="text-2xl font-bold">Logo</div>
+                <div class=" flex lg:hidden items-center justify-center" onclick="showMenu()">
+                    <span class="" id="navMenuButtonOn">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
+                    </span>
+                    <span class="hidden" id="navMenuButtonOff">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </span>
+
+                </div>
+
+                <nav class="hidden lg:flex flex-wrap flex-row gap-2 justify-end font-bold items-center absolute lg:static -bottom-[130px] right-0" id="navContent">
+                    <a href="/ProjectPHP/src/add/addProduct.php" class="px-3 py-2 bg-red-300 hover:bg-red-500 hover:text-gray-200 rounded-xl">Add Product</a>
+                    <a href="/ProjectPHP/src/view/viewProduct.php" class="px-3 py-2 bg-red-300 hover:bg-red-500 hover:text-gray-200 rounded-xl">View Product</a>
+                    <a href="" class="px-3 py-2 bg-red-300 hover:bg-red-500 hover:text-gray-200 rounded-xl">Update Product</a>
+                </nav>
             </div>
-
-            <nav class="hidden lg:flex flex-wrap flex-row gap-2 justify-end font-bold items-center absolute lg:static -bottom-[130px] right-0" id="navContent">
-                <a href="/ProjectPHP/src/add/addProduct.php" class="px-3 py-2 bg-red-300 hover:bg-red-500 hover:text-gray-200 rounded-xl">Add Product</a>
-                <a href="/ProjectPHP/src/view/viewProduct.php" class="px-3 py-2 bg-red-300 hover:bg-red-500 hover:text-gray-200 rounded-xl">View Product</a>
-                <a href="" class="px-3 py-2 bg-red-300 hover:bg-red-500 hover:text-gray-200 rounded-xl">Update Product</a>
-            </nav>
-        </div>
-    </section>
+        </section>
+    </div>
     <script src="/ProjectPHP/src/assets/js/main.js"></script>
 </body>
 
