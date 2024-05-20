@@ -1,17 +1,22 @@
 <?php
 require "../header.php";
+require_once "../db_connection.php";
 
 if (isset($_REQUEST["submit"])) {
     $productName = $_REQUEST["prodName"];
     $productPrice = $_REQUEST["prodPrice"];
-    $productImage = $_REQUEST["prodImage"];
 
     $imageDir = "../productImage/";
-
+    date_default_timezone_set("Asia/Dhaka");
     // Image Uploading Part 
-    $imageName = date("Y_m_d") . "." . pathinfo($_FILES["prodImage"]["name"], PATHINFO_EXTENSION);
+    $imageName = date("Y_m_d_H_i_s") . "." . pathinfo($_FILES["prodImage"]["name"], PATHINFO_EXTENSION);
     $imageFullPath = $imageDir . $imageName;
     move_uploaded_file($_FILES["prodImage"]["tmp_name"], $imageFullPath);
+    $query = "INSERT INTO productinfo(name, image, price) VALUES
+     ('$productName','$imageName','$productPrice')";
+    mysqli_query($conn, $query);
+    header("location: ../view/viewProduct.php");
+    exit();
 }
 
 
